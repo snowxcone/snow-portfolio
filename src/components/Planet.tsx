@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import * as THREE from 'three';
 import { MeshDistortMaterial } from '@react-three/drei';
+import * as THREE from 'three';
 // import { useLoader } from '@react-three/fiber';
 // import { TextureLoader } from 'three/src/loaders/TextureLoader'
 

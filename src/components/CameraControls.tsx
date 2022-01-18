@@ -20,8 +20,7 @@ export const CameraControls = () => {
     gl: { domElement },
   } = useThree();
 
-  camera.position.setZ(30);
-  camera.position.setX(-3);
+  camera.position.set(10, 10, 30);
 
   const controls = useRef<OrbitControls>(null!);
   useFrame((state) => {

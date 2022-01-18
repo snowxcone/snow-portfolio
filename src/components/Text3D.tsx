@@ -13,12 +13,7 @@ export const Text3D = (props: JSX.IntrinsicElements['mesh'] & { text: string }) 
       font,
       size: 2,
       height: 1,
-      curveSegments: 3,
-      bevelEnabled: true,
-      bevelThickness: 0.03,
-      bevelSize: 0.02,
-      bevelOffset: 0,
-      bevelSegments: 1,
+      curveSegments: 20,
     }),
     [],
   );

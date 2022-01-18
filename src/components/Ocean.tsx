@@ -25,8 +25,8 @@ export const Ocean = () => {
   const plane = useMemo(() => new THREE.PlaneGeometry(2000, 2000), []);
   const config = useMemo(
     () => ({
-      // textureWidth: 20,
-      // textureHeight: 20,
+      // textureWidth: 10,
+      // textureHeight: 10,
       // fog: true,
       waterNormals,
       sunDirection: new THREE.Vector3(),

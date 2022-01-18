@@ -1,5 +1,6 @@
 import { useGLTF, MeshDistortMaterial } from '@react-three/drei'
 import { GLTF } from 'three-stdlib';
+import { colors } from '../static/constants/colors';
 
 export type DreiGLTF = GLTF & {
   nodes: Record<string, THREE.Mesh>;
@@ -7,7 +8,7 @@ export type DreiGLTF = GLTF & {
 };
 
 export const Moon = () => {
-  const { nodes, materials } = useGLTF(new URL('../assets/moon.glb', import.meta.url).href,) as DreiGLTF;
+  const { nodes, materials } = useGLTF(new URL('../static/assets/moon.glb', import.meta.url).href,) as DreiGLTF;
 
   // useFrame((state, delta) => (
   //   ref.current.rotation.z = state.mouse.y * 2 * Math.PI / 3
@@ -25,9 +26,9 @@ export const Moon = () => {
     >
       <MeshDistortMaterial
         attach="material"
-        color={'orange'}
+        color={colors.blue}
         distort={0.2}
-        speed={2}
+        speed={3}
         roughness={0}
       />
     </mesh>

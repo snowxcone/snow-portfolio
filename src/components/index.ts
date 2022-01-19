@@ -1,8 +1,7 @@
-import { CameraControls } from './CameraControls';
 import { Moon } from './Moon';
 import { Ocean } from './Ocean';
-import { Planet } from './Planet';
+import { Blob } from './Blob';
 import { Text3D } from './Text3D';
 import { Card } from './Card';
 
-export { CameraControls, Moon, Ocean, Planet, Text3D, Card };
+export { Moon, Ocean, Blob, Text3D, Card };

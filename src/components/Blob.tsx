@@ -1,15 +1,15 @@
 import { useRef, useState } from 'react';
 import { MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
+import { colors } from '../static/constants/colors';
 // import { useLoader } from '@react-three/fiber';
 // import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
-export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
-  const planetRef = useRef<THREE.Mesh>(null!);
+export const Blob = (props: JSX.IntrinsicElements['mesh'] & { distortFactor?: number, blobColor?: string }) => {
+  const ref = useRef<THREE.Mesh>(null!);
   // const colorMap = useLoader(TextureLoader, new URL('../static/images/planet1.jpg', import.meta.url).href,)
 
   const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
 
   const [rotationX, setRotationX] = useState(0);
   const [rotationY, setRotationY] = useState(0);
@@ -21,19 +21,18 @@ export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
 
   return (
     <mesh
-      position={props.position}
       rotation-x={rotationX}
       rotation-y={rotationY}
-      ref={planetRef}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
+      ref={ref}
+      scale={4}
       onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}>
+      onPointerOut={(event) => setHover(false)}
+      {...props}>
       <sphereGeometry args={[1, 32, 16]} />
       <MeshDistortMaterial
         attach="material"
-        color={'#FF69B4'}
-        distort={0.3}
+        color={props.blobColor ?? colors.pink}
+        distort={props.distortFactor ?? 0.5}
         speed={2}
         roughness={0}
       />
